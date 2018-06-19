@@ -5,6 +5,7 @@ from pylab import *
 import pylab
 import numpy as np
 import uuid
+
 from numpy import vstack,array
 from scipy.cluster.vq import *
 from flask import Flask,render_template,request
@@ -32,6 +33,7 @@ def main():
         data = array(mylist)
         cent, pts = kmeans2(data,K_clusters)
         disCluster = []
+        
         for i in range(len(cent)):
             x1 = cent[i][0]
             y1 = cent[i][1]
@@ -85,6 +87,7 @@ def main():
                 rang_dict["gray"] += 1
             if str(x) == "[0.77, 0.70, 0.00]":
                 rang_dict["olive"] += 1
+
 #cluster count
         f_write='Cluster,Count\r\n'
         cnt=0
@@ -104,7 +107,7 @@ def main():
         pylab.scatter(cent[:,0],cent[:,1], marker='x', s = 400, linewidths=3)
 
         pylab.savefig("static/kmeans6.png")
-
+        
         return render_template('index.html',cdist=cdist,pdict=pdict, disCluster = disCluster)
 
 def getdata(attr1,attr2):
