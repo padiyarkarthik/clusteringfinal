@@ -85,7 +85,7 @@ def main():
                 rang_dict["gray"] += 1
             if str(x) == "[0.77, 0.70, 0.00]":
                 rang_dict["olive"] += 1
-
+#cluster count
         f_write='Cluster,Count\r\n'
         cnt=0
         print (rang_dict)
@@ -94,7 +94,7 @@ def main():
                 continue
             string = str(cnt) + " : " + str(rang_dict[i])
             pdict.append(string)
-            print ("No of points in cluster with " + str(i) + " is: " + str(rang_dict[i]))
+            print ("Cluster count with " + str(i) + " : " + str(rang_dict[i]))
             f_write+= str(cnt)+','+str(rang_dict[i])+'\r\n'
             cnt += 1
         with open("static/d3chart.csv",'wb') as nfile:
