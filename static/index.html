@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>K-Means Clustering</title>
+    <title>Clustering using K means</title>
 </head>
 <body>
 <header>
@@ -13,20 +13,20 @@ Name:Karthik Padiyar UTA ID:1001508245
 
 <form method=POST action="/kmeans">
     <div>
-        <label>Enter attribute 1:</label>
+        <label>Enter column name1:</label>
         <input type="text"  name="attribute1" placeholder="Enter attribute 1">
         <br><br>
     </div>
     <div>
-        <label>Enter attribute 2:</label>
+        <label>Enter column name2:</label>
         <input type="text" name="attribute2" placeholder="Enter attribute 2">
         <br><br>
     </div>
     <div>
-        Enter the number of clusters : <input type = "text" name="clusters">
+        Please enter the cluster count : <input type = "text" name="clusters">
         <br><br>
     </div>
-    <button type="submit">kmeans</button>
+    <button type="submit">output</button>
     <br><br><br>
     {%for i in disCluster %}
         {{i.dist}}<br>
